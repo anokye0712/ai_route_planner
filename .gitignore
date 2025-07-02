@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+
+# FastAPI
+*.log
+*.sqlite3
+
+# Docker
+Dockerfile
+*.dockerignore
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test and coverage reports
+.coverage
+*.cover
+*.coverage
+*.test
+
+# JSON files
+route_plan_result.json
