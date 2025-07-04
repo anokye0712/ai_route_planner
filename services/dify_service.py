@@ -117,7 +117,21 @@ if __name__ == "__main__":
         try:
             result = await service.get_route_plan_from_llm(
                 user_query="""
-                Plan a delivery route starting from Greenfield Bakery, 100 Maple Street, Springfield. First, deliver 10 bread boxes to Riverside Café, 220 River Road, Springfield by 10:30 AM (15-minute stop). Then drop off 5 pastry orders at Hilltop Diner, 45 Summit Avenue, Springfield before 12 PM (10-minute stop). The driver works from 9 AM to 1 PM and needs a 30-minute break between 11 AM and 11:30 AM.
+                I need to plan a route for three delivery agents: Alpha, Bravo, and Charlie. All agents start and end their shifts at a depot in Parliament Square, Westminster, London SW1P 3PA, UK.
+
+Agent Alpha works from 8 AM to 5 PM.
+Agent Bravo works from 9 AM to 6 PM, and can handle fragile items.
+Agent Charlie works from 10 AM to 7 PM, and can handle cold chain deliveries.
+
+I have three shipments to deliver:
+
+Alpha Shipment: Pick up at Euston Road, London NW1 2RA, UK, taking 15 minutes, with a pickup window between 8 AM and 11 AM. Deliver to Victoria Street, London SW1E 5JE, UK, taking 10 minutes, with a delivery window between 8 AM and 1 PM.
+
+Bravo Shipment: Pick up at High Holborn, London WC1V 6PX, UK, taking 20 minutes, with a pickup window between 10 AM and 12 PM. This shipment contains fragile items. Deliver to Buckingham Palace Road, London SW1W 0PP, UK, taking 10 minutes, with a delivery window between 10 AM and 3 PM.
+
+Charlie Shipment: Pick up at Long Acre, London WC2E 9EZ, UK, taking 15 minutes, with a pickup window between 11 AM and 1 PM. This shipment requires cold chain delivery. Deliver to The Strand, London WC2N 5DN, UK, taking 10 minutes, with a delivery window between 11 AM and 4 PM.
+
+The travel mode should be 'drive', using approximated traffic data and metric units.
                 """,
                 user="test_user_123"
             )

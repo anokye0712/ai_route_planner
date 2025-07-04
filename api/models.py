@@ -39,7 +39,7 @@ class Agent(BaseModel):
     pickup_capacity: Optional[int] = Field(None, description="Capacity for pickups")
     delivery_capacity: Optional[int] = Field(None, description="Capacity for deliveries")
     start_address: str = Field(..., description="Starting address for the agent.")
-    end_address: str = Field(..., description="Human-readable ending address (optional). If not provided, assumed to be start_address.")
+    end_address: Optional[str] = Field(None, description="Human-readable ending address (optional). If not provided, assumed to be start_address.")
     time_windows: Optional[List[TimeWindow]] = Field(None, description="Working window for the agent.")
     breaks: Optional[List[AgentBreak]] = Field(None, description="Scheduled breaks for the agent.")
     
